@@ -1,0 +1,73 @@
+{
+  "ticker": "RKLB",
+  "generated_at": "2026-05-17 20:23 ET",
+  "price_data": {
+    "current_price": 124.77,
+    "open": 128.04,
+    "day_high": 130.37,
+    "day_low": 121.8,
+    "volume": 22469092,
+    "avg_volume_30d": 23519206,
+    "52w_high": 133.18,
+    "52w_low": 23.92,
+    "market_cap": 72210759680,
+    "market_cap_b": 72.21,
+    "ps_ratio": 106.26,
+    "revenue_growth_yoy_pct": 63.5,
+    "analyst_target_mean": 100.84,
+    "analyst_upside_pct": -19.18,
+    "analyst_recommendation": "buy",
+    "analyst_count": 15,
+    "short_pct_float": 5.8,
+    "short_ratio": 1.41,
+    "next_earnings_date": "2026-08-06",
+    "days_to_earnings": 81,
+    "ma_50d": 79.2458,
+    "ma_200d": 64.93613,
+    "beta": 2.313
+  },
+  "technicals": {
+    "rsi_14": 71.2,
+    "vs_ma50": "above",
+    "vs_ma50_pct": 57.45,
+    "vs_ma200": "above",
+    "vs_ma200_pct": 92.14,
+    "dist_from_52w_high_pct": -6.31,
+    "dist_from_52w_low_pct": 421.61,
+    "change_5d_pct": 6.32,
+    "change_20d_pct": 50.45,
+    "volume_ratio": 0.96
+  },
+  "flags": {
+    "volume_divergence_warning": true,
+    "near_52w_high_warning": false,
+    "high_beta_warning": true
+  },
+  "news": [
+    {
+      "headline": "5 Must-Read Analyst Questions From Rocket Lab\u2019s Q1 Earnings Call",
+      "source": "StockStory",
+      "timestamp": "2026-05-17 17:16 ET"
+    },
+    {
+      "headline": "Rocket Lab Buys Motiv As Robotics Shift Meets Stretched Valuation Risks",
+      "source": "Simply Wall St.",
+      "timestamp": "2026-05-16 20:11 ET"
+    },
+    {
+      "headline": "MarketBeat Week in Review \u2013 05/11 - 05/15",
+      "source": "MarketBeat",
+      "timestamp": "2026-05-16 11:00 ET"
+    },
+    {
+      "headline": "Space Stock Face-Off: Is Rocket Lab or AST SpaceMobile Worth Your Money Right Now?",
+      "source": "Motley Fool",
+      "timestamp": "2026-05-16 09:35 ET"
+    },
+    {
+      "headline": "SpaceX IPO Could Put Weak Space Stocks 'Into Obscurity,' Rocket Lab CFO Says",
+      "source": "Benzinga",
+      "timestamp": "2026-05-15 22:02 ET"
+    }
+  ]
+}
