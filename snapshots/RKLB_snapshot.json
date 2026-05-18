@@ -1,21 +1,21 @@
 {
   "ticker": "RKLB",
-  "generated_at": "2026-05-18 09:16 ET",
+  "generated_at": "2026-05-18 10:25 ET",
   "price_data": {
-    "current_price": 124.77,
-    "open": 128.04,
-    "day_high": 130.37,
-    "day_low": 121.8,
-    "volume": 22469092,
+    "current_price": 128.3,
+    "open": 132.755,
+    "day_high": 138.38,
+    "day_low": 125.77,
+    "volume": 13739108,
     "avg_volume_30d": 23591350,
-    "52w_high": 133.18,
+    "52w_high": 138.38,
     "52w_low": 23.92,
-    "market_cap": 72210759680,
-    "market_cap_b": 72.21,
-    "ps_ratio": 106.26,
+    "market_cap": 74323197952,
+    "market_cap_b": 74.32,
+    "ps_ratio": 109.26,
     "revenue_growth_yoy_pct": 63.5,
     "analyst_target_mean": 100.84,
-    "analyst_upside_pct": -19.18,
+    "analyst_upside_pct": -21.41,
     "analyst_recommendation": "buy",
     "analyst_count": 15,
     "short_pct_float": 5.8,
@@ -27,16 +27,16 @@
     "beta": 2.313
   },
   "technicals": {
-    "rsi_14": 71.2,
+    "rsi_14": 72.4,
     "vs_ma50": "above",
-    "vs_ma50_pct": 57.45,
+    "vs_ma50_pct": 61.9,
     "vs_ma200": "above",
-    "vs_ma200_pct": 92.14,
-    "dist_from_52w_high_pct": -6.31,
-    "dist_from_52w_low_pct": 421.61,
-    "change_5d_pct": 6.32,
-    "change_20d_pct": 50.45,
-    "volume_ratio": 0.95
+    "vs_ma200_pct": 97.58,
+    "dist_from_52w_high_pct": -7.28,
+    "dist_from_52w_low_pct": 436.37,
+    "change_5d_pct": 9.14,
+    "change_20d_pct": 43.42,
+    "volume_ratio": 0.58
   },
   "flags": {
     "volume_divergence_warning": true,
@@ -44,6 +44,11 @@
     "high_beta_warning": true
   },
   "news": [
+    {
+      "headline": "You\u2019re Going to Regret Not Buying This ETF Before SpaceX\u2019s IPO",
+      "source": "24/7 Wall St.",
+      "timestamp": "2026-05-18 13:28 ET"
+    },
     {
       "headline": "Social Buzz: Wallstreetbets Stocks Mostly Higher Premarket Monday; POET Technologies, Rocket Lab Advance",
       "source": "MT Newswires",
@@ -63,11 +68,6 @@
       "headline": "Rocket Lab Buys Motiv As Robotics Shift Meets Stretched Valuation Risks",
       "source": "Simply Wall St.",
       "timestamp": "2026-05-16 20:11 ET"
-    },
-    {
-      "headline": "MarketBeat Week in Review \u2013 05/11 - 05/15",
-      "source": "MarketBeat",
-      "timestamp": "2026-05-16 11:00 ET"
     }
   ]
 }
