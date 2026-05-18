@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morning Snapshot — RKLB & APLD</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #f8fafc;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    #timestamp {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: #1e2330;
+      border: 1px solid #2d3447;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #2d3447;
+      padding-bottom: 14px;
+    }
+
+    .ticker {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    .change {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: auto;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .change.up   { background: #14532d; color: #4ade80; }
+    .change.down { background: #450a0a; color: #f87171; }
+    .change.flat { background: #1e293b; color: #94a3b8; }
+
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid #1a1f2e;
+      font-size: 0.85rem;
+    }
+
+    .row:last-child { border-bottom: none; }
+
+    .row-label { color: #94a3b8; }
+
+    .row-value { font-weight: 500; color: #e2e8f0; }
+
+    .row-value.green  { color: #4ade80; }
+    .row-value.red    { color: #f87171; }
+    .row-value.yellow { color: #fbbf24; }
+
+    .flags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .flag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .flag.warn  { background: #451a03; color: #fb923c; border: 1px solid #7c2d12; }
+    .flag.info  { background: #0f172a; color: #60a5fa; border: 1px solid #1e3a5f; }
+
+    .news-list { list-style: none; }
+
+    .news-item {
+      padding: 7px 0;
+      border-bottom: 1px solid #1a1f2e;
+      font-size: 0.8rem;
+    }
+
+    .news-item:last-child { border-bottom: none; }
+
+    .news-headline {
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .news-meta {
+      color: #475569;
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+
+    .copy-btn {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      padding: 8px;
+      background: #1e3a5f;
+      border: 1px solid #2563eb;
+      border-radius: 8px;
+      color: #93c5fd;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s;
+    }
+
+    .copy-btn:hover { background: #1d4ed8; color: #fff; }
+    .copy-btn.copied { background: #14532d; border-color: #16a34a; color: #4ade80; }
+
+    .loading {
+      text-align: center;
+      color: #475569;
+      padding: 60px 0;
+      font-size: 0.9rem;
+    }
+
+    .error-msg {
+      text-align: center;
+      color: #f87171;
+      padding: 40px;
+      font-size: 0.85rem;
+    }
+
+    .rsi-bar-wrap {
+      background: #0f1117;
+      border-radius: 4px;
+      height: 6px;
+      width: 80px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    .rsi-bar {
+      height: 100%;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Morning Snapshot</h1>
+  <div id="timestamp">Loading…</div>
+</header>
+
+<div id="content" class="grid"></div>
+
+<script>
+const TICKERS = ["RKLB", "APLD"];
+const BASE = "https://raw.githubusercontent.com/vladimirbrusov83-hub/stock-snapshot/main/snapshots/";
+
+function fmt(n, decimals = 2) {
+  if (n == null) return "—";
+  return Number(n).toFixed(decimals);
+}
+
+function fmtPct(n) {
+  if (n == null) return "—";
+  const sign = n >= 0 ? "+" : "";
+  return `${sign}${Number(n).toFixed(1)}%`;
+}
+
+function fmtVol(n) {
+  if (n == null) return "—";
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + "K";
+  return n;
+}
+
+function colorPct(n, el, invertGood = false) {
+  if (n == null) return;
+  const isGood = invertGood ? n < 0 : n > 0;
+  el.classList.add(isGood ? "green" : "red");
+}
+
+function rsiColor(rsi) {
+  if (rsi == null) return "#475569";
+  if (rsi >= 70) return "#f87171";
+  if (rsi <= 30) return "#4ade80";
+  return "#60a5fa";
+}
+
+function rsiLabel(rsi) {
+  if (rsi == null) return "—";
+  if (rsi >= 70) return `${rsi} (overbought)`;
+  if (rsi <= 30) return `${rsi} (oversold)`;
+  return `${rsi}`;
+}
+
+function recLabel(key) {
+  if (!key) return "—";
+  return key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function buildCard(data) {
+  const p = data.price_data;
+  const t = data.technicals;
+  const f = data.flags;
+  const news = data.news || [];
+
+  const change5 = t.change_5d_pct;
+  const changeClass = change5 > 0 ? "up" : change5 < 0 ? "down" : "flat";
+
+  // Flags
+  const flagsHtml = (() => {
+    const items = [];
+    if (f.volume_divergence_warning) items.push(`<span class="flag warn">⚠ Volume divergence</span>`);
+    if (f.near_52w_high_warning)     items.push(`<span class="flag warn">⚠ Near 52w high</span>`);
+    if (f.high_beta_warning)         items.push(`<span class="flag warn">⚠ High beta</span>`);
+    if (p.days_to_earnings != null && p.days_to_earnings <= 21)
+      items.push(`<span class="flag warn">⚠ Earnings in ${p.days_to_earnings}d</span>`);
+    if (p.days_to_earnings != null && p.days_to_earnings > 21)
+      items.push(`<span class="flag info">Earnings in ${p.days_to_earnings}d</span>`);
+    if (!items.length) items.push(`<span class="flag info">No warnings</span>`);
+    return items.join("");
+  })();
+
+  // News
+  const newsHtml = news.slice(0, 5).map(n => `
+    <li class="news-item">
+      <div class="news-headline">${n.headline || "—"}</div>
+      <div class="news-meta">${n.source || ""} · ${n.timestamp || ""}</div>
+    </li>`).join("");
+
+  const rsi = t.rsi_14;
+  const rsiPct = rsi != null ? Math.min(100, Math.max(0, rsi)) : 0;
+  const rsiHtml = rsi != null ? `
+    <span style="color:${rsiColor(rsi)}">${rsiLabel(rsi)}</span>
+    <span class="rsi-bar-wrap">
+      <span class="rsi-bar" style="width:${rsiPct}%;background:${rsiColor(rsi)}"></span>
+    </span>` : "—";
+
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="ticker">${data.ticker}</span>
+      <span class="price">$${fmt(p.current_price)}</span>
+      <span class="change ${changeClass}">${fmtPct(change5)} 5d</span>
+    </div>
+
+    <div class="flags">${flagsHtml}</div>
+
+    <div class="section">
+      <div class="section-label">Price</div>
+      <div class="row"><span class="row-label">Open</span><span class="row-value">$${fmt(p.open)}</span></div>
+      <div class="row"><span class="row-label">Day range</span><span class="row-value">$${fmt(p.day_low)} – $${fmt(p.day_high)}</span></div>
+      <div class="row"><span class="row-label">52w range</span><span class="row-value">$${fmt(p['52w_low'])} – $${fmt(p['52w_high'])}</span></div>
+      <div class="row"><span class="row-label">From 52w high</span>
+        <span class="row-value" id="${data.ticker}-52h">${fmtPct(t.dist_from_52w_high_pct)}</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Technicals</div>
+      <div class="row"><span class="row-label">RSI (14)</span><span class="row-value">${rsiHtml}</span></div>
+      <div class="row"><span class="row-label">vs 50-day MA</span>
+        <span class="row-value" id="${data.ticker}-ma50">${t.vs_ma50} (${fmtPct(t.vs_ma50_pct)})</span></div>
+      <div class="row"><span class="row-label">vs 200-day MA</span>
+        <span class="row-value" id="${data.ticker}-ma200">${t.vs_ma200} (${fmtPct(t.vs_ma200_pct)})</span></div>
+      <div class="row"><span class="row-label">Volume ratio</span>
+        <span class="row-value" id="${data.ticker}-vol">${fmt(t.volume_ratio)}</span></div>
+      <div class="row"><span class="row-label">20d change</span>
+        <span class="row-value" id="${data.ticker}-20d">${fmtPct(t.change_20d_pct)}</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Fundamentals</div>
+      <div class="row"><span class="row-label">Market cap</span><span class="row-value">$${fmt(p.market_cap_b)}B</span></div>
+      <div class="row"><span class="row-label">P/S ratio</span><span class="row-value">${fmt(p.ps_ratio)}</span></div>
+      <div class="row"><span class="row-label">Revenue growth</span>
+        <span class="row-value" id="${data.ticker}-revg">${fmtPct(p.revenue_growth_yoy_pct)}</span></div>
+      <div class="row"><span class="row-label">Beta</span><span class="row-value">${fmt(p.beta)}</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Analyst</div>
+      <div class="row"><span class="row-label">Consensus</span><span class="row-value">${recLabel(p.analyst_recommendation)} (${p.analyst_count ?? "—"})</span></div>
+      <div class="row"><span class="row-label">Target price</span><span class="row-value">$${fmt(p.analyst_target_mean)}</span></div>
+      <div class="row"><span class="row-label">Upside</span>
+        <span class="row-value" id="${data.ticker}-upside">${fmtPct(p.analyst_upside_pct)}</span></div>
+      <div class="row"><span class="row-label">Short float</span><span class="row-value">${fmt(p.short_pct_float)}%</span></div>
+      <div class="row"><span class="row-label">Short ratio</span><span class="row-value">${fmt(p.short_ratio)}</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">News</div>
+      <ul class="news-list">${newsHtml}</ul>
+    </div>
+
+    <button class="copy-btn" onclick="copyJson('${data.ticker}')">Copy JSON for Grok</button>
+  `;
+
+  // Color values after render
+  const color = (id, val, invert = false) => {
+    const el = card.querySelector("#" + id);
+    if (el && val != null) el.classList.add(val > 0 ? (invert ? "red" : "green") : (invert ? "green" : "red"));
+  };
+
+  setTimeout(() => {
+    color(`${data.ticker}-52h`,   t.dist_from_52w_high_pct);
+    color(`${data.ticker}-ma50`,  t.vs_ma50_pct);
+    color(`${data.ticker}-ma200`, t.vs_ma200_pct);
+    color(`${data.ticker}-20d`,   t.change_20d_pct);
+    color(`${data.ticker}-upside`, p.analyst_upside_pct);
+    const volEl = card.querySelector(`#${data.ticker}-vol`);
+    if (volEl && t.volume_ratio != null)
+      volEl.classList.add(t.volume_ratio >= 1 ? "green" : "yellow");
+    const revEl = card.querySelector(`#${data.ticker}-revg`);
+    if (revEl && p.revenue_growth_yoy_pct != null)
+      revEl.classList.add(p.revenue_growth_yoy_pct > 0 ? "green" : "red");
+  }, 0);
+
+  return card;
+}
+
+const snapshots = {};
+
+async function load() {
+  const content = document.getElementById("content");
+  content.innerHTML = `<div class="loading" style="grid-column:1/-1">Loading snapshots…</div>`;
+
+  const results = await Promise.all(TICKERS.map(async ticker => {
+    const url = `${BASE}${ticker}_snapshot.json?t=${Date.now()}`;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } catch (e) {
+      return { ticker, error: e.message };
+    }
+  }));
+
+  content.innerHTML = "";
+
+  let latestDate = "";
+  for (const data of results) {
+    if (data.error) {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `<div class="error-msg">Failed to load ${data.ticker}: ${data.error}</div>`;
+      content.appendChild(div);
+    } else {
+      snapshots[data.ticker] = data;
+      content.appendChild(buildCard(data));
+      if (data.generated_at) latestDate = data.generated_at;
+    }
+  }
+
+  document.getElementById("timestamp").textContent = latestDate
+    ? `Last updated: ${latestDate}`
+    : "Snapshot time unavailable";
+}
+
+function copyJson(ticker) {
+  const data = snapshots[ticker];
+  if (!data) return;
+  const text = JSON.stringify(data, null, 2);
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(`button[onclick="copyJson('${ticker}')"]`);
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(() => {
+      btn.textContent = "Copy JSON for Grok";
+      btn.classList.remove("copied");
+    }, 2000);
+  });
+}
+
+load();
+</script>
+</body>
+</html>
