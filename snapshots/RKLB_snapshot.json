@@ -1,73 +1,73 @@
 {
   "ticker": "RKLB",
-  "generated_at": "2026-05-18 10:25 ET",
+  "generated_at": "2026-05-19 09:50 ET",
   "price_data": {
-    "current_price": 128.3,
-    "open": 132.755,
-    "day_high": 138.38,
-    "day_low": 125.77,
-    "volume": 13739108,
-    "avg_volume_30d": 23591350,
+    "current_price": 122.425,
+    "open": 125.97,
+    "day_high": 127.2,
+    "day_low": 121.41,
+    "volume": 4658755,
+    "avg_volume_30d": 23880500,
     "52w_high": 138.38,
     "52w_low": 23.92,
-    "market_cap": 74323197952,
-    "market_cap_b": 74.32,
-    "ps_ratio": 109.26,
+    "market_cap": 70853591040,
+    "market_cap_b": 70.85,
+    "ps_ratio": 104.26,
     "revenue_growth_yoy_pct": 63.5,
     "analyst_target_mean": 100.84,
-    "analyst_upside_pct": -21.41,
+    "analyst_upside_pct": -17.63,
     "analyst_recommendation": "buy",
     "analyst_count": 15,
     "short_pct_float": 5.8,
     "short_ratio": 1.41,
     "next_earnings_date": "2026-08-06",
-    "days_to_earnings": 80,
-    "ma_50d": 79.2458,
-    "ma_200d": 64.93613,
+    "days_to_earnings": 79,
+    "ma_50d": 80.4668,
+    "ma_200d": 65.36233,
     "beta": 2.313
   },
   "technicals": {
-    "rsi_14": 72.4,
+    "rsi_14": 64.8,
     "vs_ma50": "above",
-    "vs_ma50_pct": 61.9,
+    "vs_ma50_pct": 52.14,
     "vs_ma200": "above",
-    "vs_ma200_pct": 97.58,
-    "dist_from_52w_high_pct": -7.28,
-    "dist_from_52w_low_pct": 436.37,
-    "change_5d_pct": 9.14,
-    "change_20d_pct": 43.42,
-    "volume_ratio": 0.58
+    "vs_ma200_pct": 87.3,
+    "dist_from_52w_high_pct": -11.53,
+    "dist_from_52w_low_pct": 411.81,
+    "change_5d_pct": -1.39,
+    "change_20d_pct": 36.85,
+    "volume_ratio": 0.2
   },
   "flags": {
-    "volume_divergence_warning": true,
+    "volume_divergence_warning": false,
     "near_52w_high_warning": false,
     "high_beta_warning": true
   },
   "news": [
     {
-      "headline": "You\u2019re Going to Regret Not Buying This ETF Before SpaceX\u2019s IPO",
-      "source": "24/7 Wall St.",
-      "timestamp": "2026-05-18 13:28 ET"
+      "headline": "SpaceX filing boosts space stocks, BofA resumes ServiceNow coverage",
+      "source": "Yahoo Finance Video",
+      "timestamp": "2026-05-18 15:41 ET"
     },
     {
-      "headline": "Social Buzz: Wallstreetbets Stocks Mostly Higher Premarket Monday; POET Technologies, Rocket Lab Advance",
-      "source": "MT Newswires",
-      "timestamp": "2026-05-18 10:31 ET"
+      "headline": "Rocket Lab Shares Jump as SpaceX IPO Buzz Lifts Space Sector",
+      "source": "GuruFocus.com",
+      "timestamp": "2026-05-19 11:50 ET"
     },
     {
-      "headline": "Rocket Lab vs. SpaceX: Which Stock is the Better Aerospace Buy?",
-      "source": "Motley Fool",
-      "timestamp": "2026-05-18 09:04 ET"
-    },
-    {
-      "headline": "5 Must-Read Analyst Questions From Rocket Lab\u2019s Q1 Earnings Call",
-      "source": "StockStory",
-      "timestamp": "2026-05-17 17:16 ET"
-    },
-    {
-      "headline": "Rocket Lab Buys Motiv As Robotics Shift Meets Stretched Valuation Risks",
+      "headline": "Rocket Lab Expands Into Defense Infrastructure With Mynaric And Golden Dome",
       "source": "Simply Wall St.",
-      "timestamp": "2026-05-16 20:11 ET"
+      "timestamp": "2026-05-19 09:14 ET"
+    },
+    {
+      "headline": "Rocket Lab (RKLB) Valuation Check After Strong Short Term Share Price Gains",
+      "source": "Simply Wall St.",
+      "timestamp": "2026-05-19 07:12 ET"
+    },
+    {
+      "headline": "Deutsche Bank Raises its Price Target on Rocket Lab (RKLB)",
+      "source": "Insider Monkey",
+      "timestamp": "2026-05-19 06:46 ET"
     }
   ]
 }
