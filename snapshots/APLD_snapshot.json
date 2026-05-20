@@ -1,42 +1,42 @@
 {
   "ticker": "APLD",
-  "generated_at": "2026-05-19 09:50 ET",
+  "generated_at": "2026-05-20 09:30 ET",
   "price_data": {
-    "current_price": 37.0459,
-    "open": 37.74,
-    "day_high": 38.79,
-    "day_low": 36.92,
-    "volume": 2238439,
-    "avg_volume_30d": 21089552,
+    "current_price": 37.47,
+    "open": 37.98,
+    "day_high": 38.03,
+    "day_low": 37.47,
+    "volume": 705784,
+    "avg_volume_30d": 20949172,
     "52w_high": 47.79,
-    "52w_low": 6.43,
-    "market_cap": 10586589184,
-    "market_cap_b": 10.59,
-    "ps_ratio": 33.16,
+    "52w_low": 6.53,
+    "market_cap": 10682065920,
+    "market_cap_b": 10.68,
+    "ps_ratio": 33.54,
     "revenue_growth_yoy_pct": 139.3,
     "analyst_target_mean": 53.1,
-    "analyst_upside_pct": 43.34,
+    "analyst_upside_pct": 41.71,
     "analyst_recommendation": "strong_buy",
     "analyst_count": 10,
     "short_pct_float": 30.4,
     "short_ratio": 3.1,
     "next_earnings_date": "2026-07-29",
-    "days_to_earnings": 71,
-    "ma_50d": 31.5435,
-    "ma_200d": 28.002775,
+    "days_to_earnings": 70,
+    "ma_50d": 31.7353,
+    "ma_200d": 28.123276,
     "beta": 5.7
   },
   "technicals": {
-    "rsi_14": 49.0,
+    "rsi_14": 50.7,
     "vs_ma50": "above",
-    "vs_ma50_pct": 17.44,
+    "vs_ma50_pct": 18.07,
     "vs_ma200": "above",
-    "vs_ma200_pct": 32.29,
-    "dist_from_52w_high_pct": -22.48,
-    "dist_from_52w_low_pct": 476.14,
-    "change_5d_pct": -18.54,
-    "change_20d_pct": 15.09,
-    "volume_ratio": 0.11
+    "vs_ma200_pct": 33.23,
+    "dist_from_52w_high_pct": -21.59,
+    "dist_from_52w_low_pct": 473.81,
+    "change_5d_pct": -19.78,
+    "change_20d_pct": 16.4,
+    "volume_ratio": 0.03
   },
   "flags": {
     "volume_divergence_warning": false,
@@ -44,6 +44,16 @@
     "high_beta_warning": true
   },
   "news": [
+    {
+      "headline": "Why Babcock & Wilcox Enterprises (BW) Is Up 6.6% After $200M Equity Raise For AI Power Projects",
+      "source": "Simply Wall St.",
+      "timestamp": "2026-05-19 21:12 ET"
+    },
+    {
+      "headline": "Applied Digital, Viasat, CECO Environmental, and HNI Shares Plummet, What You Need To Know",
+      "source": "StockStory",
+      "timestamp": "2026-05-19 16:36 ET"
+    },
     {
       "headline": "A Look At Applied Digital (APLD) Valuation After $300 Million Goldman Sachs Bridge Loan For AI Data Center Expansion",
       "source": "Simply Wall St.",
@@ -58,16 +68,6 @@
       "headline": "Should You Hold APLD at 16.9x P/S? 3 Reasons Despite the Premium",
       "source": "Zacks",
       "timestamp": "2026-05-14 15:40 ET"
-    },
-    {
-      "headline": "Applied Digital (APLD) Stock Continues To Rise As Company Gets Loan For North Dakota Data Center",
-      "source": "Insider Monkey",
-      "timestamp": "2026-05-14 08:28 ET"
-    },
-    {
-      "headline": "IREN Trades at Premium Valuation: Buy, Sell or Hold the Stock?",
-      "source": "Zacks",
-      "timestamp": "2026-05-13 14:44 ET"
     }
   ]
 }
