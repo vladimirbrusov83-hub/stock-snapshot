@@ -1,42 +1,42 @@
 {
   "ticker": "RKLB",
-  "generated_at": "2026-05-20 09:30 ET",
+  "generated_at": "2026-05-21 09:54 ET",
   "price_data": {
-    "current_price": 129.1,
-    "open": 127.5,
-    "day_high": 129.4,
-    "day_low": 127.49,
-    "volume": 1021085,
-    "avg_volume_30d": 24074639,
+    "current_price": 130.13,
+    "open": 125.995,
+    "day_high": 130.85,
+    "day_low": 124.35,
+    "volume": 6063639,
+    "avg_volume_30d": 24062674,
     "52w_high": 138.38,
     "52w_low": 23.92,
-    "market_cap": 74716758016,
-    "market_cap_b": 74.72,
-    "ps_ratio": 109.95,
+    "market_cap": 75312865280,
+    "market_cap_b": 75.31,
+    "ps_ratio": 110.82,
     "revenue_growth_yoy_pct": 63.5,
     "analyst_target_mean": 100.84,
-    "analyst_upside_pct": -21.89,
+    "analyst_upside_pct": -22.51,
     "analyst_recommendation": "buy",
     "analyst_count": 15,
     "short_pct_float": 5.8,
     "short_ratio": 1.41,
     "next_earnings_date": "2026-08-06",
-    "days_to_earnings": 78,
-    "ma_50d": 81.5834,
-    "ma_200d": 65.774826,
+    "days_to_earnings": 77,
+    "ma_50d": 82.8904,
+    "ma_200d": 66.223526,
     "beta": 2.313
   },
   "technicals": {
-    "rsi_14": 70.4,
+    "rsi_14": 68.5,
     "vs_ma50": "above",
-    "vs_ma50_pct": 58.24,
+    "vs_ma50_pct": 56.99,
     "vs_ma200": "above",
-    "vs_ma200_pct": 96.28,
-    "dist_from_52w_high_pct": -6.71,
-    "dist_from_52w_low_pct": 439.72,
-    "change_5d_pct": -2.6,
-    "change_20d_pct": 44.31,
-    "volume_ratio": 0.04
+    "vs_ma200_pct": 96.5,
+    "dist_from_52w_high_pct": -5.96,
+    "dist_from_52w_low_pct": 444.02,
+    "change_5d_pct": 4.3,
+    "change_20d_pct": 50.2,
+    "volume_ratio": 0.25
   },
   "flags": {
     "volume_divergence_warning": false,
@@ -45,29 +45,29 @@
   },
   "news": [
     {
-      "headline": "SpaceX Prepares Starship V3 Launch Ahead of $1.75 Trillion IPO",
-      "source": "GuruFocus.com",
-      "timestamp": "2026-05-20 12:24 ET"
+      "headline": "Rocket Lab and AerSale Shares Plummet, What You Need To Know",
+      "source": "StockStory",
+      "timestamp": "2026-05-21 13:00 ET"
+    },
+    {
+      "headline": "Rocket Lab shares slide after company unveils potential $3 billion stock sale programme (RKLB)",
+      "source": "InvestorsHub",
+      "timestamp": "2026-05-21 12:46 ET"
+    },
+    {
+      "headline": "Stocks to Watch: Nvidia, Stellantis, Intuit, Walmart",
+      "source": "The Wall Street Journal",
+      "timestamp": "2026-05-21 12:32 ET"
     },
     {
       "headline": "SpaceX Delays Starship Launch. IPO Prospectus Due This Week.",
       "source": "Investor's Business Daily",
-      "timestamp": "2026-05-19 20:21 ET"
+      "timestamp": "2026-05-20 20:15 ET"
     },
     {
-      "headline": "Cathie Wood Shifts ARK's Defense Stocks; Contracts, Foreign Sales In Focus",
-      "source": "Investor's Business Daily",
-      "timestamp": "2026-05-19 20:14 ET"
-    },
-    {
-      "headline": "Rocket Lab Sinks 9%, Planet Labs Tumbles 6%, Intuitive Machines Slides 5%: Space Rally Hits a Wall",
-      "source": "24/7 Wall St.",
-      "timestamp": "2026-05-19 15:32 ET"
-    },
-    {
-      "headline": "Why Rocket Lab Stock Dropped Today",
-      "source": "Motley Fool",
-      "timestamp": "2026-05-19 15:24 ET"
+      "headline": "How Is Rocket Lab Strengthening Its End-to-End Space Model?",
+      "source": "Zacks",
+      "timestamp": "2026-05-20 12:57 ET"
     }
   ]
 }

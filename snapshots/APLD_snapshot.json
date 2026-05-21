@@ -1,73 +1,73 @@
 {
   "ticker": "APLD",
-  "generated_at": "2026-05-20 09:30 ET",
+  "generated_at": "2026-05-21 09:54 ET",
   "price_data": {
-    "current_price": 37.47,
-    "open": 37.98,
-    "day_high": 38.03,
-    "day_low": 37.47,
-    "volume": 705784,
-    "avg_volume_30d": 20949172,
+    "current_price": 45.4,
+    "open": 42.4,
+    "day_high": 46.19,
+    "day_low": 42.3,
+    "volume": 9386089,
+    "avg_volume_30d": 21050583,
     "52w_high": 47.79,
-    "52w_low": 6.53,
-    "market_cap": 10682065920,
-    "market_cap_b": 10.68,
-    "ps_ratio": 33.54,
+    "52w_low": 6.675,
+    "market_cap": 12973937664,
+    "market_cap_b": 12.97,
+    "ps_ratio": 40.64,
     "revenue_growth_yoy_pct": 139.3,
-    "analyst_target_mean": 53.1,
-    "analyst_upside_pct": 41.71,
+    "analyst_target_mean": 55.1,
+    "analyst_upside_pct": 21.37,
     "analyst_recommendation": "strong_buy",
     "analyst_count": 10,
     "short_pct_float": 30.4,
     "short_ratio": 3.1,
     "next_earnings_date": "2026-07-29",
-    "days_to_earnings": 70,
-    "ma_50d": 31.7353,
-    "ma_200d": 28.123276,
+    "days_to_earnings": 69,
+    "ma_50d": 31.9777,
+    "ma_200d": 28.251125,
     "beta": 5.7
   },
   "technicals": {
-    "rsi_14": 50.7,
+    "rsi_14": 62.2,
     "vs_ma50": "above",
-    "vs_ma50_pct": 18.07,
+    "vs_ma50_pct": 41.97,
     "vs_ma200": "above",
-    "vs_ma200_pct": 33.23,
-    "dist_from_52w_high_pct": -21.59,
-    "dist_from_52w_low_pct": 473.81,
-    "change_5d_pct": -19.78,
-    "change_20d_pct": 16.4,
-    "volume_ratio": 0.03
+    "vs_ma200_pct": 60.7,
+    "dist_from_52w_high_pct": -5.0,
+    "dist_from_52w_low_pct": 580.15,
+    "change_5d_pct": 6.67,
+    "change_20d_pct": 44.96,
+    "volume_ratio": 0.45
   },
   "flags": {
-    "volume_divergence_warning": false,
+    "volume_divergence_warning": true,
     "near_52w_high_warning": false,
     "high_beta_warning": true
   },
   "news": [
     {
-      "headline": "Why Babcock & Wilcox Enterprises (BW) Is Up 6.6% After $200M Equity Raise For AI Power Projects",
+      "headline": "Applied Digital\u2019s New Hyperscaler Lease Lifts Contracted AI Revenue To US$31b",
       "source": "Simply Wall St.",
-      "timestamp": "2026-05-19 21:12 ET"
+      "timestamp": "2026-05-21 13:13 ET"
     },
     {
-      "headline": "Applied Digital, Viasat, CECO Environmental, and HNI Shares Plummet, What You Need To Know",
-      "source": "StockStory",
-      "timestamp": "2026-05-19 16:36 ET"
+      "headline": "Applied Digital stock climbs after signing multibillion-dollar AI infrastructure lease agreement",
+      "source": "GuruFocus.com",
+      "timestamp": "2026-05-21 12:52 ET"
     },
     {
-      "headline": "A Look At Applied Digital (APLD) Valuation After $300 Million Goldman Sachs Bridge Loan For AI Data Center Expansion",
-      "source": "Simply Wall St.",
-      "timestamp": "2026-05-17 11:08 ET"
+      "headline": "Why APLD Stock Is Still A Bargain At $44",
+      "source": "Trefis",
+      "timestamp": "2026-05-21 12:47 ET"
     },
     {
-      "headline": "1 of Wall Street\u2019s Favorite Stock on Our Watchlist and 2 We Ignore",
-      "source": "StockStory",
-      "timestamp": "2026-05-17 05:00 ET"
+      "headline": "These Stocks Are Today\u2019s Movers: Nvidia, Intuit, Applied Digital, Walmart, Deere, NIO, and More",
+      "source": "Barrons.com",
+      "timestamp": "2026-05-21 10:42 ET"
     },
     {
-      "headline": "Should You Hold APLD at 16.9x P/S? 3 Reasons Despite the Premium",
+      "headline": "Can IREN's Rising AI Cloud Revenues Offset Bitcoin Mining Weakness?",
       "source": "Zacks",
-      "timestamp": "2026-05-14 15:40 ET"
+      "timestamp": "2026-05-20 13:31 ET"
     }
   ]
 }
